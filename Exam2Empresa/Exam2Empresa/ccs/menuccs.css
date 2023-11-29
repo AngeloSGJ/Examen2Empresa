@@ -1,0 +1,113 @@
+﻿
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+    *:focus {
+        outline: 0;
+    }
+
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    align-items: center;
+    background-color: #111111;
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+ul {
+    display: flex;
+    margin: 0 10px;
+}
+
+    ul li:before {
+        background-color: #000000;
+        background-size: cover;
+        content: '';
+        height: 200px;
+        left: -65px;
+        opacity: 0;
+        position: absolute;
+        top: -90px;
+        transform: translateY(100px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        width: 200px;
+        z-index: -1;
+    }
+
+    ul li:nth-child(1):before {
+        background-image: url('https://www.flowww.es/hubfs/Q32020%20Julio/BLOG/como-pasar-los-clientes-de-la-agenda-de-papel-al-ordenador_flowww-min.jpg');
+    }
+
+    ul li:nth-child(2):before {
+        background-image: url('https://davinci.pe/wp-content/uploads/2023/01/tecnico-en-ensamblaje-y-reparacion-de-pcs-y-moviles-portada-001.jpg');
+    }
+
+    ul li:nth-child(3):before {
+        background-image: url('https://i.blogs.es/ed843e/superpc-ap/450_1000.jpeg');
+    }
+
+    ul li:nth-child(4):before {
+        background-image: url('https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1585399881/content-items/003/958/395/Reparacion_PC__6-original.jpg?1585399881');
+    }
+
+    ul li:nth-child(5):before {
+        background-image: url('https://esi.uclm.es/assets/uploads/2022/05/desarrolladores_software_r.webp');
+    }
+
+    ul li:nth-child(6):before {
+        background-image: url('https://serviciotecnicodecomputadoras.com/wp-content/uploads/2023/05/SERVICIO-TECNICO-PORTADA.png');
+    }
+
+    ul li:hover:before {
+        opacity: 0.5;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+    }
+
+    ul li {
+        list-style: none;
+        margin: 0 10px;
+        position: relative;
+    }
+
+        ul li a {
+            display: block;
+            font-weight: 600;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+            ul li a span {
+                color: #ffffff;
+                display: block;
+                height: 100%;
+                transition: transform 0.5s ease;
+                width: 100%;
+            }
+
+                ul li a span:nth-child(1) {
+                    color: #444444;
+                }
+
+        ul li:hover a span:nth-child(1) {
+            transform: translateY(-100%);
+        }
+
+        ul li a span:nth-child(2) {
+            color: #ffffff;
+        }
+
+        ul li:hover a span:nth-child(2) {
+            transform: translateY(-100%);
+        }
