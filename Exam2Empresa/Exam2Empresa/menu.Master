@@ -99,7 +99,29 @@
 			</span>
 		</a>
 	</li>
-    <li>&nbsp;&nbsp;&nbsp; </li>
+    
+		<li>
+		<a href="MenuReparaciones.aspx">
+			<span>
+				MENU DE REPARACIONES
+			</span>
+			
+			<span>
+				MENU DE REPARACIONES
+			</span>
+		</a>
+	</li>
+		<li>
+		<a href="MenuAsignaciones.aspx">
+			<span>
+				MENU DE ASIGNACIONES
+			</span>
+			
+			<span>
+				MENU DE ASIGNACIONES
+			</span>
+		</a>
+	</li>
 </ul>
 	     
      

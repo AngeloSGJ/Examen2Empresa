@@ -80,10 +80,83 @@ INSERT INTO Reparaciones(EquipoID, Estado) VALUES
 (3, 'Pendiente')
 GO
 
+CREATE PROCEDURE INSERTARREPARACION
+@EQUIPOID INT,
+@ESTADO INT
+AS
+    BEGIN
+        INSERT INTO REPARACIONES(EQUIPOID, ESTADO) VALUES (@EQUIPOID, @ESTADO)
+    END
+GO
+
+CREATE PROCEDURE CONSULTARREPARACION_ID
+@ID INT
+AS
+    BEGIN
+        SELECT * FROM REPARACIONES WHERE REPARACIONID = @ID
+    END
+GO
+
+CREATE PROCEDURE BORRARREPARACION_ID
+@ID INT
+AS
+    BEGIN
+        DELETE FROM REPARACIONES WHERE REPARACIONID = @ID
+    END
+GO
+
+
+CREATE PROCEDURE ACTUALIZARREPARACION_ID
+@ID INT,
+@EQUIPOID VARCHAR(50),
+@FECHASOLICITUD VARCHAR(50),
+@ESTADO VARCHAR(15)
+AS
+    BEGIN
+        UPDATE REPARACIONES SET @EQUIPOID = @EQUIPOID, @FECHASOLICITUD = @FECHASOLICITUD, @ESTADO = @ESTADO WHERE REPARACIONID = @ID
+    END
+GO
+
 INSERT INTO Asignaciones(ReparacionID, TecnicoID) VALUES
 (1, 1),
 (2, 2),
 (3, 1)
+GO
+
+CREATE PROCEDURE INSERTARASIGNACION
+@ReparacionID INT,
+@TecnicoID INT
+AS
+    BEGIN
+        INSERT INTO Asignaciones(ReparacionID, TecnicoID) VALUES (@ReparacionID, @TecnicoID)
+    END
+GO
+CREATE PROCEDURE CONSULTARASINACION_ID
+@ID INT
+AS
+    BEGIN
+        SELECT * FROM Asignaciones WHERE AsignacionID = @ID
+    END
+GO
+
+CREATE PROCEDURE BORRARASIGNACION_ID
+@ID INT
+AS
+    BEGIN
+        DELETE FROM Asignaciones WHERE AsignacionID = @ID
+    END
+GO
+
+
+CREATE PROCEDURE ACTUALIZARASIGNACION_ID
+@ID INT,
+@ReparacionID INT,
+@TecnicoID INT,
+@FECHAASIGNACION VARCHAR(15)
+AS
+    BEGIN
+        UPDATE Asignaciones SET @EQUIPOID = @EQUIPOID, @FECHASOLICITUD = @FECHASOLICITUD, @ESTADO = @ESTADO WHERE ASIGNACIONID = @ID
+    END
 GO
 
 INSERT INTO DetallesReparacion(ReparacionID, Descripcion) VALUES
@@ -221,3 +294,30 @@ AS
         UPDATE Equipos SET TipoEquipo = @TIPOEQUIPO, Modelo = @MODELO, UsuarioID = @USUARIOID WHERE EquipoID = @ID
     END
 GO
+
+
+
+
+
+SELECT Usuarios.Nombre, Usuarios.Telefono, Equipos.Modelo, Tecnicos.Nombre
+from Usuarios
+inner join Equipos on Usuarios.UsuarioID = Equipos.UsuarioID
+inner join Reparaciones on Reparaciones.EquipoID = Equipos.EquipoID
+inner join Asignaciones on Asignaciones.ReparacionID = Reparaciones.ReparacionID
+inner join Tecnicos on Tecnicos.TecnicoID = Asignaciones.TecnicoID
+
+Create table Estados 
+(
+	id CHAR(1) PRIMARY KEY,
+	DESCRIPCION VARCHAR(100)
+)
+
+CREATE procedure consultaestados
+as
+  begin
+select Descripcion as estado from estados
+end 
+
+exec consultaestados
+
+INSERT INTO Estados VALUES('En revicion'),('Listo'),('Pendiente'),('Testeando')

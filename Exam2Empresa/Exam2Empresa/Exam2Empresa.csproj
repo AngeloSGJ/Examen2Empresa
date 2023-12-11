@@ -72,6 +72,8 @@
     <Content Include="ccs\menuccs.css" />
     <Content Include="Detallesreparacion.aspx" />
     <Content Include="Equipos.aspx" />
+    <Content Include="MenuReparaciones.aspx" />
+    <Content Include="MenuAsignaciones.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Reparaciones.aspx" />
     <Content Include="Tecnicos.aspx" />
@@ -88,6 +90,8 @@
     </Compile>
     <Compile Include="Clases\DBconn.cs" />
     <Compile Include="Clases\Equipos.cs" />
+    <Compile Include="Clases\MenuAsignaciones.cs" />
+    <Compile Include="Clases\MenuReparaciones.cs" />
     <Compile Include="Clases\Tecnicos.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Detallesreparacion.aspx.cs">
@@ -105,6 +109,20 @@
       <DependentUpon>Equipos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clases\Global.cs" />
+    <Compile Include="MenuReparaciones.aspx.cs">
+      <DependentUpon>MenuReparaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuReparaciones.aspx.designer.cs">
+      <DependentUpon>MenuReparaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAsignaciones.aspx.cs">
+      <DependentUpon>MenuAsignaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuAsignaciones.aspx.designer.cs">
+      <DependentUpon>MenuAsignaciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

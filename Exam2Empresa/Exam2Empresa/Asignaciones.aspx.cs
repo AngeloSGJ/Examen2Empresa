@@ -17,6 +17,7 @@ namespace Exam2Empresa
             if (!IsPostBack)
             {
                 LlenarGrid();
+              
             }
         }
         protected void LlenarGrid()
@@ -40,5 +41,6 @@ namespace Exam2Empresa
                 }
             }
         }
+
     }
 }
